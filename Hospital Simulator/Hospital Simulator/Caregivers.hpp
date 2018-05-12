@@ -11,4 +11,17 @@
 
 #include <stdio.h>
 
+//parent class for Doctors and Nurses
+class Caregivers
+{
+    
+public:
+    int getTreatTime();
+};
+
+class Nurses
+{
+    
+};
+
 #endif /* Caregivers_hpp */
