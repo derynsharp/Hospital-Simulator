@@ -36,6 +36,10 @@ private:
     int serviceTime;
     int totalWaitTime;
     
+    //also holds the number of doctors and nurses the user inputs
+    int numOfDoctors;
+    int numOfNurses;
+    
     //this class also holds a priority queue of all the patients based on illness priority as well as queues for however many Doctors and Nurses the user puts in
     std::priority_queue<Patients *> allPatients;
     std::vector <std::queue<Patients *>> allDoctors;
@@ -45,6 +49,46 @@ public:
     
     Doctors * genDoc; //generic doctor object
     Nurses * genNurse; //generic nurse object
+    
+    //accessor and mutator functions
+    
+    string getFName() {return fname;}
+    void setFName(string firstN) {fname = firstN;}
+    
+    string getLName() {return lname;}
+    void setLName(string lastN) {lname = lastN;}
+    
+    std::stack<int> getIllnesses() {return illnessP;}
+    void setIllnesses(std::stack<int> ill) {illnessP = ill;}
+    
+    int getArrivalTime() {return arrivalTime;}
+    void setArrivalTime(int aTime) {arrivalTime = aTime;}
+    
+    int getVisits() {return numOfVisits;}
+    void setVisits(int numV) {numOfVisits = numV;}
+    
+    int getServiceTime() {return serviceTime;}
+    void setServiceTime (int sTime) {serviceTime = sTime;}
+    
+    int getTotalWaitTime() {return totalWaitTime;}
+    void setTotalWaitTime(int tTime) {totalWaitTime = tTime;}
+    
+    int getDocs() {return numOfDoctors;}
+    void setDocs(int numDocs) {numOfDoctors = numDocs;}
+    
+    int getNurses() {return numOfNurses;}
+    void setNurses(int numNurses) {numOfNurses = numNurses;}
+    
+    //resize Doctor and Nurse queue vectors according to num of doctors and nurses the user inputs
+    void setUpDoctors(int docNum)
+    {
+        allDoctors.resize(docNum);
+    }
+    
+    void setUpNurses(int nurseNum)
+    {
+        allNurses.resize(nurseNum);
+    }
     
     //organizes Patients in the priority queue according to their priority illness level; highest numbers will go on top
     bool operator<(const Patients * &other) const
@@ -62,6 +106,10 @@ public:
     
     void enter(int clock)
     {
+        //set up how many doctors and nurses there are
+        setUpDoctors(numOfDoctors);
+        setUpNurses(numOfNurses);
+        
         if (!allPatients.empty())
         {
             //bring in patient with highest illness priority and set their arrival time to now
