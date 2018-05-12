@@ -7,3 +7,18 @@
 //
 
 #include "Caregivers.hpp"
+#include "Random.h"
+
+Random randTime;
+
+//randomize between 1 and 20 minutes
+int Caregivers::getTreatTime()
+{
+    return randTime.next_int(19) + 1;
+}
+
+//randomize between 1 and 10 minutes for Nurses
+int Nurses::getTreatTime()
+{
+    return randTime.next_int(9) + 1;
+}
