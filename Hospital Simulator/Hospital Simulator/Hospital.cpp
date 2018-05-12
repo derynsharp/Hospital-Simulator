@@ -7,3 +7,11 @@
 //
 
 #include "Hospital.hpp"
+
+void Hospital::runSim()
+{
+    for (clock = 0; clock < totalTime; clock++)
+    {
+        allPatients->enter(clock);
+    }
+}

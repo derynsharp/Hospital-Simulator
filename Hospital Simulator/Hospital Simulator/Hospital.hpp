@@ -10,5 +10,19 @@
 #define Hospital_hpp
 
 #include <stdio.h>
+#include "Patients.hpp"
+
+class Hospital
+{
+private:
+    int clock;
+    int totalTime;
+    Patients * allPatients;
+    
+public:
+    void enterData();
+    void runSim();
+    void displayMenu();
+};
 
 #endif /* Hospital_hpp */

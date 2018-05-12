@@ -8,6 +8,8 @@
 
 #include <iostream>
 #include "Caregivers.hpp"
+#include "Patients.hpp"
+
 
 int main()
 {
