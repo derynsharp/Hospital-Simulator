@@ -17,6 +17,7 @@ class Hospital
 private:
     int clock;
     int totalTime;
+	int arrivalRate;
     Patients * allPatients;
     
 public:
