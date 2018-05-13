@@ -20,17 +20,20 @@
 using std::string;
 
 /*Patients Class:
+    
+    Variables:
+        fname = first name of patient
+        lname = last name of patient
+        illnessP = a stack that holds all of the patient's illness priority numbers (1-20)
+        arrivalTime = when the patient arrived at the ER
+        numOfVisits = number of times the patient has entered the ER
+        serviceTime = how long it took for the patient to be treated
+        totalWaitTime = how long the patient was in the ER, from arrival to discharge
  
-    Holds a lot of important stuff:
-        1. Variables for patients that will be held in their records (name, number of visits to the ER, etc)
-        2. The priority queue for all patients, based off their illness priority number
-        3. The vector of queues for the doctors and nurses the patients can get treated by
- 
-    How it works:
-        1. Lets the patient at the top of the priority queue (the one with the worst illness) into the ER
-        2. Checks to see whether a nurse or doctor has to treat them (patients with illness priorities bellow 10 can get treated by either while patients with priorities above 10 can only be treated by doctors)
-        3. Checks to see if there are any nurses or doctors that are available to treat the current patient and, if so, puts them with that doctor or nurse to be treated
-        4. Checks whether doctors and nurses have finished treating their patients according to their arrival time and how long it took the caregiver to treat them, and if so, discharges the patients (no longer part of any queues)
+    Functions:
+        mutator and accessor functions
+        bool operator function -- used to set patients in priority queue based of their most recent illness priority number
+        createPatients function -- streams in names from text files and pushes them onto the priority queue and a map of all patients
  */
 class Patients
 {

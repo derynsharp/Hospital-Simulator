@@ -69,6 +69,15 @@ void Hospital::setUpNurses(int numNurses)
     allNurses.resize(numNurses);
 }
 
+
+/* enter(int clock) function
+    
+    How it works:
+        1. Lets the patient at the top of the priority queue (the one with the worst illness) into the ER
+        2. Checks to see whether a nurse or doctor has to treat them (patients with illness priorities bellow 10 can get treated by either while patients with priorities above 10 can only be treated by doctors)
+        3. Checks to see if there are any nurses or doctors that are available to treat the current patient and, if so, puts them with that doctor or nurse to be treated
+        4. Checks whether doctors and nurses have finished treating their patients according to their arrival time and how long it took the caregiver to treat them, and if so, discharges the patients (no longer part of any queues)
+ */
 void Hospital::enter(int clock)
 {
     Doctors * genDoc = new Doctors; //generic doctor object
