@@ -32,7 +32,7 @@
 		F36F4B4A20A787DB00E6F44F /* Caregivers.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Caregivers.cpp; sourceTree = "<group>"; };
 		F36F4B4B20A787DB00E6F44F /* Caregivers.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Caregivers.hpp; sourceTree = "<group>"; };
 		F36F4B5020A787F800E6F44F /* Random.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Random.h; sourceTree = "<group>"; };
-		F36F4B5320A7BE8000E6F44F /* Patients.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = Patients.hpp; path = ../../../../../.Trash/Patients.hpp; sourceTree = "<group>"; };
+		F36F4B5420A7C10600E6F44F /* Patients.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Patients.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,7 +70,7 @@
 				F36F4B4820A787CC00E6F44F /* Hospital.hpp */,
 				F36F4B4A20A787DB00E6F44F /* Caregivers.cpp */,
 				F36F4B4B20A787DB00E6F44F /* Caregivers.hpp */,
-				F36F4B5320A7BE8000E6F44F /* Patients.hpp */,
+				F36F4B5420A7C10600E6F44F /* Patients.hpp */,
 				F36F4B5020A787F800E6F44F /* Random.h */,
 			);
 			path = "Hospital Simulator";
