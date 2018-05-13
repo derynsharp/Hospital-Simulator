@@ -7,6 +7,7 @@
 //
 
 #include "Hospital.hpp"
+#include "Patients.hpp"
 
 void Hospital::enterData()
 {
@@ -28,7 +29,7 @@ void Hospital::enterData()
 
 	if (inputNum2 >= 1 && inputNum2 <= 10)
 	{
-		= inputNum2;
+		setUpNurses(inputNum2);
 	}
 	else if (inputNum2 <= 0 || inputNum2 >= 11)
 	{
