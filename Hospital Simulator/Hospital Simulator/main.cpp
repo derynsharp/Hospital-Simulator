@@ -14,6 +14,8 @@
 
 int main()
 {
-	Hospital MyHospital;
-	MyHospital.enterData;
+	Hospital * MyHospital;
+	MyHospital->enterData();
+    MyHospital->runSim();
+    MyHospital->displayMenu();
 }

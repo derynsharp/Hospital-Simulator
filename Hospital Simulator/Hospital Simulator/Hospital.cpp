@@ -16,7 +16,7 @@ void Hospital::enterData()
 	std::cin >> inputNum;
 	if (inputNum >= 1 && inputNum <= 60)
 	{
-		arrivalRate = inputNum;
+		arrivalRate = inputNum/60.0;
 	}
 	else if (inputNum <= 0 || inputNum >= 61)
 	{
@@ -49,7 +49,9 @@ void Hospital::enterData()
 		std::cout << "Invalid Number.\n";
 	}
 	
-	std::cout << "The patient arrival rate is now " << arrivalRate << ", the number of Nurses is " << numOfNurses << " and the number of Doctors is " << numOfDoctors << ".\n";
+	std::cout << "The patient arrival rate is now " << arrivalRate << ", the number of nurses is " << numOfNurses << " and the number of doctors is " << numOfDoctors << ".\n";
+    
+    std::cout << "Simulation commencing." << std::endl;
 
 }
 
@@ -57,6 +59,7 @@ void Hospital::runSim()
 {
     for (clock = 0; clock < totalTime; clock++)
     {
+        enter(clock);
     }
 }
 

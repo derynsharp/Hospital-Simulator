@@ -21,6 +21,7 @@
         1. The priority queue for all patients, based off their illness priority number
         2. The vector of queues for the doctors and nurses the patients can get treated by
         3. Clock and the total time the simulation will run for
+        4. The arrival rate of patients/min
  */
 
 class Hospital
