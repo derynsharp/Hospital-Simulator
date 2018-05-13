@@ -16,7 +16,7 @@ void Hospital::enterData()
 	std::cin >> inputNum;
 	if (inputNum >= 1 && inputNum <= 60)
 	{
-		arrivalRate = inputNum/60.0;
+		arrivalRate = inputNum/60;
 	}
 	else if (inputNum <= 0 || inputNum >= 61)
 	{
@@ -102,7 +102,7 @@ void Hospital::enter(int clock)
         if (currentPatient->getIllnesses().top() <= 10)
         {
             //check all the Nurse queues
-            for (int i = 0; i < allNurses.size(); i++)
+            for (unsigned int i = 0; i < allNurses.size(); i++)
             {
                 //in the case that the Nurse queue is full
                 if (!allNurses[i].empty())
@@ -115,7 +115,7 @@ void Hospital::enter(int clock)
                         allNurses[i].pop();
                     }
                     //check all the Doctor queues (since people with these illness priorities can also be treated by Doctors if the Nurses are not available)
-                    for (int y = 0; y < allDoctors.size(); y++)
+                    for (unsigned int y = 0; y < allDoctors.size(); y++)
                     {
                         //in the case that the Doctor queue is full
                         if (!allDoctors.empty())
@@ -150,7 +150,7 @@ void Hospital::enter(int clock)
         else
         {
             //check all Doctor queues
-            for (int i = 0; i < allDoctors.size(); i++)
+            for (unsigned int i = 0; i < allDoctors.size(); i++)
             {
                 //in the case that the Doctor queue is full
                 if (!allDoctors[i].empty())
@@ -176,7 +176,7 @@ void Hospital::enter(int clock)
     else
     {
         //check all the Nurse and Doctor queues
-        for (int i = 0; i < allNurses.size(); i++)
+        for (unsigned int i = 0; i < allNurses.size(); i++)
         {
             //in the case that the Nurse queue is full
             if (!allNurses[i].empty())
