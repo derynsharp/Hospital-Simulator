@@ -7,6 +7,7 @@
 //
 
 #include "Hospital.hpp"
+#include "Patients.hpp"
 
 void Hospital::enterData()
 {
@@ -28,7 +29,7 @@ void Hospital::enterData()
 
 	if (inputNum2 >= 1 && inputNum2 <= 10)
 	{
-		= inputNum2;
+		setUpNurses(inputNum2);
 	}
 	else if (inputNum2 <= 0 || inputNum2 >= 11)
 	{
@@ -36,18 +37,18 @@ void Hospital::enterData()
 	}
 	
 	int inputNum3;
-	std::cout << "The patient arrival rate is now " << arrivalRate << " and the number of Nurses is " << numofNurses << ".How many Doctors are on call this week ? Please enter an integer from 1 - 10.\n";
+	std::cout << "The patient arrival rate is now " << arrivalRate << " and the number of Nurses is " << inputNum2 << ".How many Doctors are on call this week ? Please enter an integer from 1 - 10.\n";
 	std::cin >> inputNum3;
 	if (inputNum3 >= 1 && inputNum3 <= 10)
 	{
-		NumofDoctors = inputNum3;
+		setUpDoctors(inputNum3);
 	}
 	else if (inputNum3 <= 0 || inputNum3 >= 11)
 	{
 		std::cout << "Invalid Number.\n";
 	}
 	
-	std::cout << "The patient arrival rate is now " << arrivalRate << ", the number of Nurses is " << numofNurses << " and the number of Doctors is " << NumofDoctors << ".\n";
+	std::cout << "The patient arrival rate is now " << arrivalRate << ", the number of Nurses is " << inputNum2 << " and the number of Doctors is " << inputNum3 << ".\n";
 
 }
 
