@@ -71,8 +71,8 @@ void Hospital::setUpNurses(int numNurses)
 
 void Hospital::enter(int clock)
 {
-    Doctors * genDoc; //generic doctor object
-    Nurses * genNurse; //generic nurse object
+    Doctors * genDoc = new Doctors; //generic doctor object
+    Nurses * genNurse = new Nurses; //generic nurse object
     
     //set up how many doctors and nurses there are
     setUpDocs(numOfDoctors);
