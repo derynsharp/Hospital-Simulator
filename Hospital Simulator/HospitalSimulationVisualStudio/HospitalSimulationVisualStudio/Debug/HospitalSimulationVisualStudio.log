@@ -1,0 +1,7 @@
+﻿  Caregivers.cpp
+c:\users\colleen\documents\github\hospital-simulator\hospital simulator\hospital simulator\caregivers.cpp(25): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "stdafx.h"' to your source?
+  Hospital.cpp
+c:\users\colleen\documents\github\hospital-simulator\hospital simulator\hospital simulator\hospital.cpp(194): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "stdafx.h"' to your source?
+  main.cpp
+c:\users\colleen\documents\github\hospital-simulator\hospital simulator\hospital simulator\main.cpp(20): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "stdafx.h"' to your source?
+  Generating Code...

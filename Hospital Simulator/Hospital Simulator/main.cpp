@@ -9,9 +9,11 @@
 #include <iostream>
 #include "Caregivers.hpp"
 #include "Patients.hpp"
+#include "Hospital.hpp"
 
 
 int main()
 {
-
+	Hospital MyHospital;
+	MyHospital.enterData;
 }

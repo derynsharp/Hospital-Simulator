@@ -28,7 +28,6 @@
     <ClCompile Include="..\..\Hospital Simulator\Caregivers.cpp" />
     <ClCompile Include="..\..\Hospital Simulator\Hospital.cpp" />
     <ClCompile Include="..\..\Hospital Simulator\main.cpp" />
-    <ClCompile Include="..\..\Hospital Simulator\Patients.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
