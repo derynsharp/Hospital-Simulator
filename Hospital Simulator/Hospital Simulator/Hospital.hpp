@@ -38,6 +38,7 @@ private:
     std::vector <std::queue<Patients *>> allNurses;
     
 public:
+	Hospital() {};
     void enterData();
     void runSim();
     void displayMenu();

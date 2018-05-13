@@ -29,7 +29,7 @@ void Hospital::enterData()
 
 	if (inputNum2 >= 1 && inputNum2 <= 10)
 	{
-		setUpNurses(inputNum2);
+		numOfNurses = inputNum2;
 	}
 	else if (inputNum2 <= 0 || inputNum2 >= 11)
 	{
@@ -39,6 +39,7 @@ void Hospital::enterData()
 	int inputNum3;
 	std::cout << "The patient arrival rate is now " << arrivalRate << " and the number of Nurses is " << numOfNurses << ".How many Doctors are on call this week ? Please enter an integer from 1 - 10.\n";
 	std::cin >> inputNum3;
+
 	if (inputNum3 >= 1 && inputNum3 <= 10)
 	{
 		numOfDoctors = inputNum3;
