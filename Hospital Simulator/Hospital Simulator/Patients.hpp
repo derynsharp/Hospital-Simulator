@@ -15,7 +15,6 @@
 #include <queue>
 #include <vector>
 #include "Caregivers.hpp"
-#include "Hospital.hpp"
 
 using std::string;
 
@@ -43,7 +42,7 @@ private:
     string lname;
     std::stack<int> illnessP;
     int arrivalTime;
-    int numOfVisits;
+    unsigned long int numOfVisits;
     int serviceTime;
     int totalWaitTime;
     
@@ -66,14 +65,15 @@ public:
     int getArrivalTime() {return arrivalTime;}
     void setArrivalTime(int aTime) {arrivalTime = aTime;}
     
-    int getVisits() {return numOfVisits;}
-    void setVisits(int numV) {numOfVisits = numV;}
+    unsigned long int getVisits() {return numOfVisits;}
+    void setVisits(unsigned long int numV) {numOfVisits = numV;}
     
     int getServiceTime() {return serviceTime;}
     void setServiceTime (int sTime) {serviceTime = sTime;}
     
     int getTotalWaitTime() {return totalWaitTime;}
     void setTotalWaitTime(int tTime) {totalWaitTime = tTime;}
+    
     
     
     //organizes Patients in the priority queue according to their priority illness level; highest numbers will go on top

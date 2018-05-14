@@ -2,9 +2,7 @@
 //  Hospital.cpp
 //  Hospital Simulator
 //
-//  Created by Madison Oliver on 5/12/18.
-//  Copyright © 2018 Madison Oliver. All rights reserved.
-//
+
 
 #include "Hospital.hpp"
 #include "Patients.hpp"
@@ -111,7 +109,8 @@ void Hospital::enter(int clock)
                     Patients * thisPatient = allNurses[i].front();
                     if (clock - thisPatient->getArrivalTime() > thisPatient->getServiceTime())
                     {
-                        thisPatient->setTotalWaitTime(clock - thisPatient->getArrivalTime());
+                        thisPatient->setTotalWaitTime(clock - thisPatient->getArrivalTime()); //update total time
+                        thisPatient->setVisits(thisPatient->getIllnesses().size()); //set number of visits to how many illnesses they've had
                         allNurses[i].pop();
                     }
                     //check all the Doctor queues (since people with these illness priorities can also be treated by Doctors if the Nurses are not available)
@@ -125,6 +124,7 @@ void Hospital::enter(int clock)
                             if (clock - thisPatient->getArrivalTime() > thisPatient->getServiceTime())
                             {
                                 thisPatient->setTotalWaitTime(clock - thisPatient->getArrivalTime());
+                                 thisPatient->setVisits(thisPatient->getIllnesses().size()); //set number of visits to how many illnesses they've had
                                 allDoctors[y].pop();
                             }
                         }
@@ -160,6 +160,7 @@ void Hospital::enter(int clock)
                     if (clock - thisPatient->getArrivalTime() > thisPatient->getServiceTime())
                     {
                         thisPatient->setTotalWaitTime(clock - thisPatient->getArrivalTime());
+                         thisPatient->setVisits(thisPatient->getIllnesses().size()); //set number of visits to how many illnesses they've had
                         allDoctors[i].pop();
                     }
                 }
@@ -186,6 +187,7 @@ void Hospital::enter(int clock)
                 if (clock - thisPatient->getArrivalTime() > thisPatient->getServiceTime())
                 {
                     thisPatient->setTotalWaitTime(clock - thisPatient->getArrivalTime());
+                     thisPatient->setVisits(thisPatient->getIllnesses().size()); //set number of visits to how many illnesses they've had
                     allNurses[i].pop();
                 }
             }
@@ -197,6 +199,7 @@ void Hospital::enter(int clock)
                 if (clock - thisPatient->getArrivalTime() > thisPatient->getServiceTime())
                 {
                     thisPatient->setTotalWaitTime(clock - thisPatient->getArrivalTime());
+                    thisPatient->setVisits(thisPatient->getIllnesses().size()); //set number of visits to how many illnesses they've had
                     allDoctors[i].pop();
                 }
             }

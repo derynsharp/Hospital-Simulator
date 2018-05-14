@@ -9,7 +9,6 @@
 #ifndef Hospital_hpp
 #define Hospital_hpp
 
-#include <stdio.h>
 #include <iostream>
 #include <queue>
 #include <vector>
@@ -28,18 +27,19 @@ class Hospital
 {
 private:
     int clock;
-    int totalTime;
+    const int totalTime = 10080; //number of minutes in a week
 	int arrivalRate;
     int numOfDoctors;
     int numOfNurses;
     
-    //this class also holds a priority queue of all the patients based on illness priority as well as queues for however many Doctors and Nurses the user puts in
+   
     std::priority_queue<Patients *> allPatients;
     std::vector <std::queue<Patients *>> allDoctors;
     std::vector <std::queue<Patients *>> allNurses;
     
 public:
-	Hospital() {};
+    Hospital() {}
+    Hospital(int clock, int arrivalRate, int numOfDoctors, int numOfNurses) {this->clock = clock; this->arrivalRate = arrivalRate; this->numOfDoctors = numOfDoctors; this->numOfNurses = numOfNurses;}
     void enterData();
     void runSim();
     void displayMenu();

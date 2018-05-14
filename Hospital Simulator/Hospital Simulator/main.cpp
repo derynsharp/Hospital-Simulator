@@ -14,8 +14,6 @@
 
 int main()
 {
-	Hospital * MyHospital;
-	MyHospital->enterData();
+    Hospital * MyHospital = new Hospital (0,0,0,0);
     MyHospital->runSim();
-    MyHospital->displayMenu();
 }
