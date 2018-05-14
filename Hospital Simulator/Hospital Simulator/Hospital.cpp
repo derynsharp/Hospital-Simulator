@@ -11,41 +11,50 @@ void Hospital::enterData()
 {
 	int inputNum;
 	std::cout << "Welcome to 273Ville Hospital.How many patients are arriving per hour ? Enter an integer from 1 - 60. \n";
-	std::cin >> inputNum;
-	if (inputNum >= 1 && inputNum <= 60)
+	do
 	{
-		arrivalRate = inputNum/60.0;
-	}
-	else if (inputNum <= 0 || inputNum >= 61)
-	{
-		std::cout << "Invalid Number. \n";
-	}
+		std::cin >> inputNum;
+		if (inputNum >= 1 && inputNum <= 60)
+		{
+			arrivalRate = inputNum / 60;
+		}
+		else if (inputNum <= 0 || inputNum >= 61)
+		{
+			std::cout << "Invalid Number. \nEnter an integer from 1 - 60. \n";
+		}
+	} while (inputNum <= 0 || inputNum >= 61);
 
 	int inputNum2;
 	std::cout << "The patient arrival rate is now " << arrivalRate << ".How many Nurses are on call this week? Please enter an integer from 1 - 10. \n";
-	std::cin >> inputNum2;
+	do
+	{
+		std::cin >> inputNum2;
 
-	if (inputNum2 >= 1 && inputNum2 <= 10)
-	{
-		numOfNurses = inputNum2;
-	}
-	else if (inputNum2 <= 0 || inputNum2 >= 11)
-	{
-		std::cout << "Invalid Number.\n";
-	}
+		if (inputNum2 >= 1 && inputNum2 <= 10)
+		{
+			numOfNurses = inputNum2;
+		}
+		else if (inputNum2 <= 0 || inputNum2 >= 11)
+		{
+			std::cout << "Invalid Number.\nPlease enter an integer from 1 - 10. \n";
+		}
+	} while (inputNum2 <= 0 || inputNum2 >= 11);
 	
 	int inputNum3;
 	std::cout << "The patient arrival rate is now " << arrivalRate << " and the number of Nurses is " << numOfNurses << ".How many Doctors are on call this week ? Please enter an integer from 1 - 10.\n";
-	std::cin >> inputNum3;
-
-	if (inputNum3 >= 1 && inputNum3 <= 10)
+	
+	do 
 	{
-		numOfDoctors = inputNum3;
-	}
-	else if (inputNum3 <= 0 || inputNum3 >= 11)
-	{
-		std::cout << "Invalid Number.\n";
-	}
+		std::cin >> inputNum3;
+		if (inputNum3 >= 1 && inputNum3 <= 10)
+		{
+			numOfDoctors = inputNum3;
+		}
+		else if (inputNum3 <= 0 || inputNum3 >= 11)
+		{
+			std::cout << "Invalid Number.\nPlease enter an integer from 1 - 10.\n";
+		}
+	} while (inputNum3 <= 0 || inputNum3 >= 11);
 	
 	std::cout << "The patient arrival rate is now " << arrivalRate << ", the number of nurses is " << numOfNurses << " and the number of doctors is " << numOfDoctors << ".\n";
     
@@ -100,7 +109,7 @@ void Hospital::enter(int clock)
         if (currentPatient->getIllnesses().top() <= 10)
         {
             //check all the Nurse queues
-            for (int i = 0; i < allNurses.size(); i++)
+            for (unsigned int i = 0; i < allNurses.size(); i++)
             {
                 //in the case that the Nurse queue is full
                 if (!allNurses[i].empty())
@@ -114,7 +123,7 @@ void Hospital::enter(int clock)
                         allNurses[i].pop();
                     }
                     //check all the Doctor queues (since people with these illness priorities can also be treated by Doctors if the Nurses are not available)
-                    for (int y = 0; y < allDoctors.size(); y++)
+                    for (unsigned int y = 0; y < allDoctors.size(); y++)
                     {
                         //in the case that the Doctor queue is full
                         if (!allDoctors.empty())
@@ -150,7 +159,7 @@ void Hospital::enter(int clock)
         else
         {
             //check all Doctor queues
-            for (int i = 0; i < allDoctors.size(); i++)
+            for (unsigned int i = 0; i < allDoctors.size(); i++)
             {
                 //in the case that the Doctor queue is full
                 if (!allDoctors[i].empty())
@@ -177,7 +186,7 @@ void Hospital::enter(int clock)
     else
     {
         //check all the Nurse and Doctor queues
-        for (int i = 0; i < allNurses.size(); i++)
+        for (unsigned int i = 0; i < allNurses.size(); i++)
         {
             //in the case that the Nurse queue is full
             if (!allNurses[i].empty())

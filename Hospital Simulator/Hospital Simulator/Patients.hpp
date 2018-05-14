@@ -14,6 +14,7 @@
 #include <stack>
 #include <queue>
 #include <vector>
+#include <fstream>
 #include "Caregivers.hpp"
 
 using std::string;
@@ -87,8 +88,29 @@ public:
     
     void createPatients()
     {
-        
-    }
+
+			std::ifstream fin;
+			fin.open("residents_of_273ville.txt");
+
+			if (fin.fail()) 
+			{
+				std::cout << "can't open 'residents_of_273ville.txt'\n";
+			}
+			const int population = 2000;
+			string Directory[population];
+
+			for (int i = 0; i < population; i++)
+			{
+				string line;
+				while (getline(fin, line))
+				{
+					Directory[i] = line;
+				}
+			}
+			fin.close(); //created array of first names
+		}
+	
+
 };
 
 #endif /* Patients_hpp */

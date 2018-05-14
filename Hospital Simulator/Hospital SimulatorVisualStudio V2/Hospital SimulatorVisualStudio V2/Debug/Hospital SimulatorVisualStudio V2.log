@@ -1,25 +1,24 @@
-﻿  Caregivers.cpp
-  Hospital.cpp
-c:\users\colleen\documents\github\hospital-simulator\hospital simulator\hospital simulator\hospital.cpp(102): warning C4018: '<': signed/unsigned mismatch
-c:\users\colleen\documents\github\hospital-simulator\hospital simulator\hospital simulator\hospital.cpp(115): warning C4018: '<': signed/unsigned mismatch
-c:\users\colleen\documents\github\hospital-simulator\hospital simulator\hospital simulator\hospital.cpp(150): warning C4018: '<': signed/unsigned mismatch
-c:\users\colleen\documents\github\hospital-simulator\hospital simulator\hospital simulator\hospital.cpp(176): warning C4018: '<': signed/unsigned mismatch
+﻿  Hospital.cpp
+c:\users\colleen\documents\github\hospital-simulator\hospital simulator\hospital simulator\hospital.cpp(19): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+c:\users\colleen\documents\github\hospital-simulator\hospital simulator\hospital simulator\hospital.cpp(105): warning C4018: '<': signed/unsigned mismatch
+c:\users\colleen\documents\github\hospital-simulator\hospital simulator\hospital simulator\hospital.cpp(118): warning C4018: '<': signed/unsigned mismatch
+c:\users\colleen\documents\github\hospital-simulator\hospital simulator\hospital simulator\hospital.cpp(153): warning C4018: '<': signed/unsigned mismatch
+c:\users\colleen\documents\github\hospital-simulator\hospital simulator\hospital simulator\hospital.cpp(179): warning C4018: '<': signed/unsigned mismatch
   main.cpp
-c:\users\colleen\documents\github\hospital-simulator\hospital simulator\hospital simulator\hospital.hpp(36): error C2065: 'Patients': undeclared identifier
-c:\users\colleen\documents\github\hospital-simulator\hospital simulator\hospital simulator\hospital.hpp(36): error C2059: syntax error: '>'
-c:\users\colleen\documents\github\hospital-simulator\hospital simulator\hospital simulator\hospital.hpp(36): error C2976: 'std::priority_queue': too few template arguments
-  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.14.26428\include\queue(235): note: see declaration of 'std::priority_queue'
 c:\users\colleen\documents\github\hospital-simulator\hospital simulator\hospital simulator\hospital.hpp(37): error C2065: 'Patients': undeclared identifier
 c:\users\colleen\documents\github\hospital-simulator\hospital simulator\hospital simulator\hospital.hpp(37): error C2059: syntax error: '>'
-c:\users\colleen\documents\github\hospital-simulator\hospital simulator\hospital simulator\hospital.hpp(37): error C2976: 'std::queue': too few template arguments
-  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.14.26428\include\queue(21): note: see declaration of 'std::queue'
-c:\users\colleen\documents\github\hospital-simulator\hospital simulator\hospital simulator\hospital.hpp(37): error C3203: 'queue': unspecialized class template can't be used as a template argument for template parameter '_Ty', expected a real type
+c:\users\colleen\documents\github\hospital-simulator\hospital simulator\hospital simulator\hospital.hpp(37): error C2976: 'std::priority_queue': too few template arguments
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.14.26428\include\queue(235): note: see declaration of 'std::priority_queue'
 c:\users\colleen\documents\github\hospital-simulator\hospital simulator\hospital simulator\hospital.hpp(38): error C2065: 'Patients': undeclared identifier
 c:\users\colleen\documents\github\hospital-simulator\hospital simulator\hospital simulator\hospital.hpp(38): error C2059: syntax error: '>'
 c:\users\colleen\documents\github\hospital-simulator\hospital simulator\hospital simulator\hospital.hpp(38): error C2976: 'std::queue': too few template arguments
   c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.14.26428\include\queue(21): note: see declaration of 'std::queue'
 c:\users\colleen\documents\github\hospital-simulator\hospital simulator\hospital simulator\hospital.hpp(38): error C3203: 'queue': unspecialized class template can't be used as a template argument for template parameter '_Ty', expected a real type
-c:\users\colleen\documents\github\hospital-simulator\hospital simulator\hospital simulator\hospital.hpp(41): error C2512: 'std::priority_queue': no appropriate default constructor available
+c:\users\colleen\documents\github\hospital-simulator\hospital simulator\hospital simulator\hospital.hpp(39): error C2065: 'Patients': undeclared identifier
+c:\users\colleen\documents\github\hospital-simulator\hospital simulator\hospital simulator\hospital.hpp(39): error C2059: syntax error: '>'
+c:\users\colleen\documents\github\hospital-simulator\hospital simulator\hospital simulator\hospital.hpp(39): error C2976: 'std::queue': too few template arguments
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.14.26428\include\queue(21): note: see declaration of 'std::queue'
+c:\users\colleen\documents\github\hospital-simulator\hospital simulator\hospital simulator\hospital.hpp(39): error C3203: 'queue': unspecialized class template can't be used as a template argument for template parameter '_Ty', expected a real type
+c:\users\colleen\documents\github\hospital-simulator\hospital simulator\hospital simulator\hospital.hpp(42): error C2512: 'std::priority_queue': no appropriate default constructor available
   c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.14.26428\include\queue(235): note: see declaration of 'std::priority_queue'
-c:\users\colleen\documents\github\hospital-simulator\hospital simulator\hospital simulator\main.cpp(18): error C3867: 'Hospital::enterData': non-standard syntax; use '&' to create a pointer to member
   Generating Code...
