@@ -80,70 +80,13 @@ public:
     
     
     //organizes Patients in the priority queue according to their priority illness level; highest numbers will go on top
-    bool operator<(const Patients * &other) const
-    {
-        if (illnessP < other->illnessP)
-            return true;
-        else
-            return false;
-    }
-    
-    void createPatients()
-    {
-
-			//read from 'residents' text file to create a directory of first names
-			std::ifstream fin;
-			fin.open("residents_of_273ville.txt");
-
-			if (fin.fail()) 
-			{
-				std::cout << "can't open 'residents_of_273ville.txt'\n";
-			}
-			const int population = 2000;
-			string DirectoryFirst[population];
-
-			for (int i = 0; i < population; i++)
-			{
-				string line;
-				while (getline(fin, line))
-				{
-					DirectoryFirst[i] = line;
-				}
-			}
-			fin.close(); //created array of first names
-
-			//read from 'surnames' text file to create a directory of last names
-			
-			fin.open("surnames_of_273ville.txt");
-
-			if (fin.fail())
-			{
-				std::cout << "can't open 'surnames_of_273ville.txt'\n";
-			}
-		
-			string DirectoryLast[population];
-
-			for (int i = 0; i < population; i++)
-			{
-				string line;
-				while (getline(fin, line))
-				{
-					DirectoryLast[i] = line;
-				}
-			}
-			fin.close(); //created array of surnames. 
-			//These arrays should make creating a map of patient objects much easier.
-
-			std::map <string, Patients*> PatientDirectory;
-
-			for (int i = 0; i < population; i++)
-			{
-				PatientDirectory[DirectoryFirst[i]] = new Patients(DirectoryFirst[i], DirectoryLast[i]);
-			}
-
-		}
-
-
+	bool operator<(const Patients * &other) const
+	{
+		if (illnessP < other->illnessP)
+			return true;
+		else
+			return false;
+	}
 };
 
 #endif /* Patients_hpp */

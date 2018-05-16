@@ -62,6 +62,91 @@ void Hospital::enterData()
 
 }
 
+void Hospital::createPatients()
+{
+		//read from 'residents' text file to create a directory of first names
+		std::ifstream fin;
+		fin.open("residents_of_273ville.txt");
+
+		if (fin.fail())
+		{
+			std::cout << "can't open 'residents_of_273ville.txt'\n";
+		}
+
+		for (int i = 0; i < population; i++)
+		{
+			string line;
+			while (getline(fin, line))
+			{
+				DirectoryFirst[i] = line;
+			}
+		}
+		fin.close(); //created array of first names
+
+					 //read from 'surnames' text file to create a directory of last names
+
+		fin.open("surnames_of_273ville.txt");
+
+		if (fin.fail())
+		{
+			std::cout << "can't open 'surnames_of_273ville.txt'\n";
+		}
+
+
+		for (int i = 0; i < population; i++)
+		{
+			string line;
+			while (getline(fin, line))
+			{
+				DirectoryLast[i] = line;
+			}
+		}
+		fin.close(); //created array of surnames. 
+					 //These arrays should make creating a map of patient objects much easier.
+
+
+		for (int i = 0; i < population; i++)
+		{
+			PatientDirectory[DirectoryFirst[i]] = new Patients(DirectoryFirst[i], DirectoryLast[i]);
+
+		
+	}
+}
+
+void Hospital::getPatient()
+{
+	srand(time(NULL));
+	int x;
+	x = rand() % 2000; // randomizes an index number to use to find a patient in the map
+
+	PatientDirectory.find(DirectoryFirst[x]); //finds said patient in the map
+
+	srand(time(NULL));
+	int y;
+	y = rand() % 10; //randomizes illness PROBABILITY
+
+	if (y >= 0 && y <= 6) // 70% probability
+	{
+		srand(time(NULL));
+		int a;
+		a = rand() % 10 + 1; //illness priority between 1 and 10
+	}
+
+	else if (y >= 7 && y <= 8) // 20% probability
+	{
+		srand(time(NULL));
+		int b;
+		b = rand() % 5 + 11; //illness priority between 11 and 15
+	}
+
+	else if (y == 9) // 10% probability
+	{
+		srand(time(NULL));
+		int c;
+		c = rand() % 5 + 16; //illness priority between 16 and 20
+	}
+}
+
 void Hospital::runSim()
 {
     for (clock = 0; clock < totalTime; clock++)
