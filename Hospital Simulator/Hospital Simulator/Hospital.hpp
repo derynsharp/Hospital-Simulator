@@ -31,6 +31,11 @@ private:
 	int arrivalRate;
     int numOfDoctors;
     int numOfNurses;
+
+	static const int population = 2000;
+	string DirectoryFirst[population];
+	string DirectoryLast[population];
+	std::map <string, Patients*> PatientDirectory;
     
    
     std::priority_queue<Patients *> allPatients;
@@ -41,6 +46,8 @@ public:
     Hospital() {}
     Hospital(int clock, int arrivalRate, int numOfDoctors, int numOfNurses) {this->clock = clock; this->arrivalRate = arrivalRate; this->numOfDoctors = numOfDoctors; this->numOfNurses = numOfNurses;}
     void enterData();
+	void createPatients();
+	void getPatient();
     void runSim();
     void displayMenu();
     
