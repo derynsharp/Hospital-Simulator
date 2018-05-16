@@ -148,10 +148,20 @@ Patients * Hospital::getPatient()
     return (*itr).second;
 }
 
+void Hospital::setPatients()
+{
+    Random thisRand;
+    if (thisRand.next_double() < arrivalRate)
+        {
+            allPatients.push(getPatient());
+        }
+}
+
 void Hospital::runSim()
 {
     for (clock = 0; clock < totalTime; clock++)
     {
+        setPatients();
         enter(clock);
     }
 }
