@@ -63,7 +63,7 @@ public:
     void setLName(string lastN) {lname = lastN;}
     
     std::stack<int> getIllnesses() {return illnessP;}
-    void setIllnesses(std::stack<int> ill) {illnessP = ill;}
+    void setIllnesses(int ill) {illnessP.push(ill);}
     
     int getArrivalTime() {return arrivalTime;}
     void setArrivalTime(int aTime) {arrivalTime = aTime;}

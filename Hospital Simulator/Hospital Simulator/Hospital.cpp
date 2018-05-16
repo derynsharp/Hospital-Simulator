@@ -113,38 +113,39 @@ void Hospital::createPatients()
 	}
 }
 
-void Hospital::getPatient()
+Patients * Hospital::getPatient()
 {
 	srand(time(NULL));
 	int x;
 	x = rand() % 2000; // randomizes an index number to use to find a patient in the map
 
-	PatientDirectory.find(DirectoryFirst[x]); //finds said patient in the map
+	auto itr = PatientDirectory.find(DirectoryFirst[x]); //finds said patient in the map
 
-	srand(time(NULL));
 	int y;
 	y = rand() % 10; //randomizes illness PROBABILITY
 
 	if (y >= 0 && y <= 6) // 70% probability
 	{
-		srand(time(NULL));
 		int a;
 		a = rand() % 10 + 1; //illness priority between 1 and 10
+        (*itr).second->setIllnesses(a);
 	}
 
 	else if (y >= 7 && y <= 8) // 20% probability
 	{
-		srand(time(NULL));
 		int b;
 		b = rand() % 5 + 11; //illness priority between 11 and 15
+        (*itr).second->setIllnesses(b);
 	}
 
 	else if (y == 9) // 10% probability
 	{
-		srand(time(NULL));
 		int c;
 		c = rand() % 5 + 16; //illness priority between 16 and 20
+        (*itr).second->setIllnesses(c);
 	}
+    
+    return (*itr).second;
 }
 
 void Hospital::runSim()
