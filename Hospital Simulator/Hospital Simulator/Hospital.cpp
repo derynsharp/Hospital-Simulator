@@ -25,7 +25,7 @@ void Hospital::enterData()
 	} while (inputNum <= 0 || inputNum >= 61);
 
 	int inputNum2;
-	std::cout << "The patient arrival rate is now " << arrivalRate << ".How many Nurses are on call this week? Please enter an integer from 1 - 10. \n";
+	std::cout << "The patient arrival rate is now " << arrivalRate << ".\nHow many Nurses are on call this week? Please enter an integer from 1 - 10. \n";
 	do
 	{
 		std::cin >> inputNum2;
@@ -41,7 +41,7 @@ void Hospital::enterData()
 	} while (inputNum2 <= 0 || inputNum2 >= 11);
 	
 	int inputNum3;
-	std::cout << "The patient arrival rate is now " << arrivalRate << " and the number of Nurses is " << numOfNurses << ".How many Doctors are on call this week ? Please enter an integer from 1 - 10.\n";
+	std::cout << "The patient arrival rate is now " << arrivalRate << " and the number of Nurses is " << numOfNurses << ".\nHow many Doctors are on call this week ? Please enter an integer from 1 - 10.\n";
 	
 	do 
 	{
