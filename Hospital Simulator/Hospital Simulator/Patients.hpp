@@ -34,7 +34,7 @@ using std::string;
     Functions:
         mutator and accessor functions
         bool operator function -- used to set patients in priority queue based of their most recent illness priority number
-        createPatients function -- streams in names from text files and pushes them onto the priority queue and a map of all patients
+        createPatients function -- streams in names from text files and pushes them onto the a map of all patients, assigning a random illness priority, and then pushing admitted patients onto the ER priority queue
  */
 class Patients
 {

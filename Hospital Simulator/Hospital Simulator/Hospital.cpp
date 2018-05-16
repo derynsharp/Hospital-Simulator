@@ -215,3 +215,48 @@ void Hospital::enter(int clock)
         }
     }
 }
+
+int Hospital::displayMenu()
+{
+    int answer = 0;
+    
+    while (answer != 3)
+    {
+    std::cout << "1) Display all patients" << std::endl;
+    std::cout << "2) Search for a specific patient record" << std::endl;
+    std::cout << "3) Exit" << std::endl;
+    std::cout << "Please enter 1), 2), or 3): ";
+    std::cin >> answer;
+        
+        int validAnswer = 1;
+    
+    while (validAnswer != 0)
+    {
+        switch (answer)
+        {
+            case 1:
+                //display map here
+                validAnswer = 0;
+                break;
+                
+            case 2:
+                //search map by first name here
+                validAnswer = 0;
+                break;
+                
+            case 3:
+                //exit program
+                validAnswer = 0;
+                continue;
+                break;
+                
+            default:
+                std::cout << "Invalid option, please try again: ";
+                std::cin >> answer;
+                break;
+        }
+        }
+    }
+    return 0;
+}
+

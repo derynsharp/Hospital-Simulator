@@ -42,7 +42,7 @@ public:
     Hospital(int clock, int arrivalRate, int numOfDoctors, int numOfNurses) {this->clock = clock; this->arrivalRate = arrivalRate; this->numOfDoctors = numOfDoctors; this->numOfNurses = numOfNurses;}
     void enterData();
     void runSim();
-    void displayMenu();
+    int displayMenu();
     
     void setUpDocs(int numDocs);
     void setUpNurses(int numNurses);
