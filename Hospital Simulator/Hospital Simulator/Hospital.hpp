@@ -48,6 +48,7 @@ public:
     void enterData();
 	void createPatients();
 	Patients * getPatient();
+    void setPatients();
     void runSim();
     int displayMenu();
     
