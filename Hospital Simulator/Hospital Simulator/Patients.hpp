@@ -113,7 +113,7 @@ public:
 			fin.close(); //created array of first names
 
 			//read from 'surnames' text file to create a directory of last names
-			std::ifstream fin;
+			
 			fin.open("surnames_of_273ville.txt");
 
 			if (fin.fail())
