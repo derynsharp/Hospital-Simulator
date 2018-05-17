@@ -44,9 +44,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "123"
-            endingLineNumber = "123"
-            landmarkName = "Hospital::createPatients()"
-            landmarkType = "7">
+            endingLineNumber = "123">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -60,9 +58,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "298"
-            endingLineNumber = "298"
-            landmarkName = "Hospital::enter(int clock)"
-            landmarkType = "7">
+            endingLineNumber = "298">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -76,9 +72,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "318"
-            endingLineNumber = "318"
-            landmarkName = "Hospital::enter(int clock)"
-            landmarkType = "7">
+            endingLineNumber = "318">
             <Locations>
                <Location
                   shouldBeEnabled = "No"
@@ -200,9 +194,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "287"
-            endingLineNumber = "287"
-            landmarkName = "Hospital::enter(int clock)"
-            landmarkType = "7">
+            endingLineNumber = "287">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -216,9 +208,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "209"
-            endingLineNumber = "209"
-            landmarkName = "Hospital::enter(int clock)"
-            landmarkType = "7">
+            endingLineNumber = "209">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -232,9 +222,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "157"
-            endingLineNumber = "157"
-            landmarkName = "Hospital::getPatient()"
-            landmarkType = "7">
+            endingLineNumber = "157">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -248,9 +236,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "153"
-            endingLineNumber = "153"
-            landmarkName = "Hospital::getPatient()"
-            landmarkType = "7">
+            endingLineNumber = "153">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -264,9 +250,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "217"
-            endingLineNumber = "217"
-            landmarkName = "Hospital::enter(int clock)"
-            landmarkType = "7">
+            endingLineNumber = "217">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy

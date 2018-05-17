@@ -357,7 +357,7 @@ int Hospital::displayMenu()
             }
                 
             case 2:
-            {
+			{
 				//search map by first name
 				std::string name;
 				std::cout << "Enter a first name to find that patient record: ";
