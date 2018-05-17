@@ -7,6 +7,8 @@
 #include "Hospital.hpp"
 #include "Patients.hpp"
 
+Random thisRand;
+
 void Hospital::enterData()
 {
 	double inputNum;
@@ -113,33 +115,32 @@ void Hospital::createPatients()
 
 Patients * Hospital::getPatient()
 {
-	srand(time(NULL));
-	int x;
-	x = rand() % 2000; // randomizes an index number to use to find a patient in the map
+    int x;
+    x = thisRand.next_int(2000); // randomizes an index number to use to find a patient in the map
 
 	auto itr = PatientDirectory.find(DirectoryFirst[x]); //finds said patient in the map
 
 	int y;
-	y = rand() % 10; //randomizes illness PROBABILITY
+	y = thisRand.next_int(10); //randomizes illness PROBABILITY
 
 	if (y >= 0 && y <= 6) // 70% probability
 	{
 		int a;
-		a = rand() % 10 + 1; //illness priority between 1 and 10
+		a = thisRand.next_int(10) + 1; //illness priority between 1 and 10
         (*itr).second->setIllnesses(a);
 	}
 
 	else if (y >= 7 && y <= 8) // 20% probability
 	{
 		int b;
-		b = rand() % 5 + 11; //illness priority between 11 and 15
+		b = thisRand.next_int(5) + 11; //illness priority between 11 and 15
         (*itr).second->setIllnesses(b);
 	}
 
 	else if (y == 9) // 10% probability
 	{
 		int c;
-		c = rand() % 5 + 16; //illness priority between 16 and 20
+		c = thisRand.next_int(5) + 16; //illness priority between 16 and 20
         (*itr).second->setIllnesses(c);
 	}
     
@@ -148,19 +149,20 @@ Patients * Hospital::getPatient()
 
 void Hospital::setPatients()
 {
-    Random thisRand;
-    if (thisRand.next_double() < arrivalRate)
+    double d = thisRand.next_double();
+    if (d < arrivalRate)
         {
-            allPatients.push(getPatient());
+            Patients* p = getPatient();
+            allPatients.push(p);
         }
 }
 
-void Hospital::runSim(std::priority_queue<Patients *> allPatientstest)
+void Hospital::runSim()
 {
     for (clock = 0; clock < totalTime; clock++)
     {
-        //setPatients();
-        enter(clock, allPatientstest);
+        setPatients();
+        enter(clock);
     }
 }
 
@@ -183,7 +185,7 @@ void Hospital::setUpNurses(int numNurses)
         3. Checks to see if there are any nurses or doctors that are available to treat the current patient and, if so, puts them with that doctor or nurse to be treated
         4. Checks whether doctors and nurses have finished treating their patients according to their arrival time and how long it took the caregiver to treat them, and if so, discharges the patients (no longer part of any queues)
  */
-void Hospital::enter(int clock,std::priority_queue<Patients *> allPatientstest)
+void Hospital::enter(int clock)
 {
     Doctors * genDoc = new Doctors; //generic doctor object
     Nurses * genNurse = new Nurses; //generic nurse object
@@ -193,10 +195,10 @@ void Hospital::enter(int clock,std::priority_queue<Patients *> allPatientstest)
     setUpNurses(numOfNurses);
     
     
-    if (!allPatientstest.empty())
+    if (!allPatients.empty())
     {
         //bring in patient with highest illness priority and set their arrival time to now
-        Patients * currentPatient = allPatientstest.top();
+        Patients * currentPatient = allPatients.top();
         currentPatient->setArrivalTime(clock);
         
         //look to see if any Nurses or Doctors are available if their illness priority is beneath or equal to 10
@@ -220,7 +222,7 @@ void Hospital::enter(int clock,std::priority_queue<Patients *> allPatientstest)
                     for (int y = 0; y < allDoctors.size(); y++)
                     {
                         //in the case that the Doctor queue is full
-                        if (!allDoctors.empty())
+                        if (!allDoctors[y].empty())
                         {
                             //check if Patient in Doctor queue is done being treated and pop them off if so(discharged for good yay!)
                             Patients * thisPatient = allDoctors[y].front();
@@ -236,7 +238,7 @@ void Hospital::enter(int clock,std::priority_queue<Patients *> allPatientstest)
                         {
                             allDoctors[y].push(currentPatient);
                             currentPatient->setServiceTime(genDoc->getTreatTime());
-                            allPatientstest.pop();
+                            allPatients.pop();
                         }
                     }
                 }
@@ -245,7 +247,7 @@ void Hospital::enter(int clock,std::priority_queue<Patients *> allPatientstest)
                 {
                     allNurses[i].push(currentPatient);
                     currentPatient->setServiceTime(genNurse->getTreatTime());
-                    allPatientstest.pop();
+                    allPatients.pop();
                 }
             }
         }
@@ -272,7 +274,7 @@ void Hospital::enter(int clock,std::priority_queue<Patients *> allPatientstest)
                 {
                     allDoctors[i].push(currentPatient);
                     currentPatient->setServiceTime(genDoc->getTreatTime());
-                    allPatientstest.pop();
+                    allPatients.pop();
                 }
             }
         }
@@ -338,11 +340,18 @@ int Hospital::displayMenu()
                 break;
                 
             case 2:
-                //search map by first name here
+                //search map by first name
+                std::string name;
+                std::cout << "Enter a first name to find that patient record: ";
+                std::cin >> name;
+                auto itr = PatientDirectory.find(name);
+                std::cout << "Name: " << (*itr).second->getFName() << " " << (*itr).second->getLName();
+                std::cout << "Illness Levels: " << (*itr).second->getAllIllnesses().top();
+                
                 validAnswer = 0;
                 break;
                 
-            case 3:
+            /*case 3:
                 //exit program
                 validAnswer = 0;
                 continue;
@@ -352,6 +361,7 @@ int Hospital::displayMenu()
                 std::cout << "Invalid option, please try again: ";
                 std::cin >> answer;
                 break;
+             */
         }
         }
     }

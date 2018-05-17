@@ -78,15 +78,15 @@ public:
     void setTotalWaitTime(int tTime) {totalWaitTime = tTime;}
     
     
-    
-    //organizes Patients in the priority queue according to their priority illness level; highest numbers will go on top
-	bool operator<(const Patients * &other) const
-	{
-		if (this->illnessP.top() < other->illnessP.top())
-			return true;
-		else
-			return false;
-	}
 };
+
+//organizes Patients in the priority queue according to their priority illness level; highest numbers will go on top
+bool operator<(const Patients * first, const Patients * other)
+{
+    if (first.getIllnesses() < other.getIllnesses())
+        return true;
+    else
+        return false;
+}
 
 #endif /* Patients_hpp */

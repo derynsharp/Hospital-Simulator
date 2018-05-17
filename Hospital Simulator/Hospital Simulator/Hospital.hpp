@@ -52,13 +52,13 @@ public:
 	void createPatients();
 	Patients * getPatient();
     void setPatients();
-    void runSim(std::priority_queue<Patients *> allPatientstest);
+    void runSim();
     int displayMenu();
     
     void setUpDocs(int numDocs);
     void setUpNurses(int numNurses);
     
-    void enter(int clock,std::priority_queue<Patients *> allPatientstest);
+    void enter(int clock);
 };
 
 #endif /* Hospital_hpp */

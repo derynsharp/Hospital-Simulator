@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Hospital Simulator/Hospital.cpp"
-            timestampString = "548021673.0517859"
+            timestampString = "548280669.1099581"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "11"
-            endingLineNumber = "11"
+            startingLineNumber = "13"
+            endingLineNumber = "13"
             landmarkName = "Hospital::enterData()"
             landmarkType = "7">
          </BreakpointContent>
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Hospital Simulator/Hospital.cpp"
-            timestampString = "548207474.585771"
+            timestampString = "548280669.1099581"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "122"
-            endingLineNumber = "122"
+            startingLineNumber = "123"
+            endingLineNumber = "123"
             landmarkName = "Hospital::getPatient()"
             landmarkType = "7">
          </BreakpointContent>
@@ -58,12 +58,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Hospital Simulator/Hospital.cpp"
-            timestampString = "548273766.036564"
+            timestampString = "548280075.994241"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "291"
-            endingLineNumber = "291"
-            landmarkName = "Hospital::enter(int clock,std::priority_queue&lt;Patients *&gt; allPatientstest)"
+            startingLineNumber = "293"
+            endingLineNumber = "293"
+            landmarkName = "Hospital::enter(int clock)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -74,12 +74,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Hospital Simulator/Hospital.cpp"
-            timestampString = "548273813.3798259"
+            timestampString = "548280075.994241"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "313"
-            endingLineNumber = "313"
-            landmarkName = "Hospital::enter(int clock,std::priority_queue&lt;Patients *&gt; allPatientstest)"
+            startingLineNumber = "315"
+            endingLineNumber = "315"
+            landmarkName = "Hospital::displayMenu()"
             landmarkType = "7">
             <Locations>
                <Location
@@ -182,11 +182,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Hospital Simulator/main.cpp"
-            timestampString = "548274736.273036"
+            timestampString = "548279177.7399091"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "18"
-            endingLineNumber = "18"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
             landmarkName = "main()"
             landmarkType = "9">
          </BreakpointContent>
@@ -198,12 +198,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Hospital Simulator/Hospital.cpp"
-            timestampString = "548275713.909606"
+            timestampString = "548280075.994241"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "281"
-            endingLineNumber = "281"
-            landmarkName = "Hospital::enter(int clock,std::priority_queue&lt;Patients *&gt; allPatientstest)"
+            startingLineNumber = "283"
+            endingLineNumber = "283"
+            landmarkName = "Hospital::enter(int clock)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -214,12 +214,44 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Hospital Simulator/Hospital.cpp"
-            timestampString = "548277332.462068"
+            timestampString = "548280075.994241"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "205"
-            endingLineNumber = "205"
-            landmarkName = "Hospital::enter(int clock,std::priority_queue&lt;Patients *&gt; allPatientstest)"
+            startingLineNumber = "207"
+            endingLineNumber = "207"
+            landmarkName = "Hospital::enter(int clock)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Hospital Simulator/Hospital.cpp"
+            timestampString = "548280075.994241"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "155"
+            endingLineNumber = "155"
+            landmarkName = "Hospital::setPatients()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Hospital Simulator/Hospital.cpp"
+            timestampString = "548280075.994241"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "153"
+            endingLineNumber = "153"
+            landmarkName = "Hospital::setPatients()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
