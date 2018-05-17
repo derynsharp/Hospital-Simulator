@@ -25,7 +25,7 @@ void Hospital::enterData()
 	} while (inputNum <= 0 || inputNum >= 61);
 
 	int inputNum2;
-	std::cout << "The patient arrival rate is now " << arrivalRate << ".How many Nurses are on call this week? Please enter an integer from 1 - 10. \n";
+	std::cout << "The patient arrival rate is now " << arrivalRate << ".\nHow many Nurses are on call this week? Please enter an integer from 1 - 10. \n";
 	do
 	{
 		std::cin >> inputNum2;
@@ -41,7 +41,7 @@ void Hospital::enterData()
 	} while (inputNum2 <= 0 || inputNum2 >= 11);
 	
 	int inputNum3;
-	std::cout << "The patient arrival rate is now " << arrivalRate << " and the number of Nurses is " << numOfNurses << ".How many Doctors are on call this week ? Please enter an integer from 1 - 10.\n";
+	std::cout << "The patient arrival rate is now " << arrivalRate << " and the number of Nurses is " << numOfNurses << ".\nHow many Doctors are on call this week ? Please enter an integer from 1 - 10.\n";
 	
 	do 
 	{
@@ -73,18 +73,18 @@ void Hospital::createPatients()
 			std::cout << "can't open 'residents_of_273ville.txt'\n";
 		}
 
-		for (int i = 0; i < population; i++)
+		int i = 0; 
+		string line2;
+
+		while (getline(fin, line2)&& i< population)
 		{
-			string line;
-			while (getline(fin, line))
-			{
-				DirectoryFirst[i] = line;
-			}
+			DirectoryFirst[i] = line2;
+			i++;
 		}
+		
 		fin.close(); //created array of first names
 
-					 //read from 'surnames' text file to create a directory of last names
-
+		//read from 'surnames' text file to create a directory of last names
 		fin.open("surnames_of_273ville.txt");
 
 		if (fin.fail())
@@ -93,24 +93,22 @@ void Hospital::createPatients()
 		}
 
 
-		for (int i = 0; i < population; i++)
+		i = 0;
+		string line;
+
+		while (getline(fin, line) && i< population)
 		{
-			string line;
-			while (getline(fin, line))
-			{
-				DirectoryLast[i] = line;
-			}
+			DirectoryLast[i] = line;
+			i++;
 		}
 		fin.close(); //created array of surnames. 
 					 //These arrays should make creating a map of patient objects much easier.
 
 
-		for (int i = 0; i < population; i++)
+		for (i = 0; i < population; i++)
 		{
 			PatientDirectory[DirectoryFirst[i]] = new Patients(DirectoryFirst[i], DirectoryLast[i]);
-
-		
-	}
+		}
 }
 
 Patients * Hospital::getPatient()
