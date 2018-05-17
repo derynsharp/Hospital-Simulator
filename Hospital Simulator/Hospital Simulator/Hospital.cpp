@@ -4,6 +4,15 @@
 //
 
 
+
+#include <stdio.h>
+#include <iostream>
+#include <string>
+#include <stack>
+#include <queue>
+#include <vector>
+#include <fstream>
+#include <map>
 #include "Hospital.hpp"
 #include "Patients.hpp"
 
@@ -326,15 +335,19 @@ int Hospital::displayMenu()
     
     while (validAnswer != 0)
     {
-        switch (answer)
+		string searchterm; 
+
+		switch (answer)
         {
             case 1:
-                //display map here
+				std::cout << &PatientDirectory;
                 validAnswer = 0;
                 break;
                 
             case 2:
-                //search map by first name here
+				std::cout << "Please enter the name you would like to search for. First name only, case sensitive.\n";
+				std::cin >> searchterm;
+				std::cout << &PatientDirectory.find(searchterm);
                 validAnswer = 0;
                 break;
                 
