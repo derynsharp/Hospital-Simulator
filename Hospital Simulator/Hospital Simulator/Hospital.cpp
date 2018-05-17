@@ -74,11 +74,11 @@ void Hospital::createPatients()
 		}
 
 		int i = 0; 
-		string line2;
+		string line;
 
-		while (getline(fin, line2)&& i< population)
+		while (getline(fin, line) && i<= population)
 		{
-			DirectoryFirst[i] = line2;
+			DirectoryFirst[i] = line;
 			i++;
 		}
 		
@@ -94,11 +94,11 @@ void Hospital::createPatients()
 
 
 		i = 0;
-		string line;
+		string line2;
 
-		while (getline(fin, line) && i< population)
+		while (getline(fin, line2) && i<= population)
 		{
-			DirectoryLast[i] = line;
+			DirectoryLast[i] = line2;
 			i++;
 		}
 		fin.close(); //created array of surnames. 
