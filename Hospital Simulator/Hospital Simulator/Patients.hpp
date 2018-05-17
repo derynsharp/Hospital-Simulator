@@ -80,6 +80,8 @@ public:
     
 };
 
+//doesn't work because of errors we cannot fix
+
 //organizes Patients in the priority queue according to their priority illness level; highest numbers will go on top
 /*bool operator<(const Patients * first, const Patients * other)
 {

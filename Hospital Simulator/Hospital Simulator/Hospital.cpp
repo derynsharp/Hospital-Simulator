@@ -153,6 +153,8 @@ Patients * Hospital::getPatient()
         (*itr).second->setIllnesses(c);
 	}
     
+    (*itr).second->setVisits((*itr).second->getAllIllnesses().size());
+    
     return (*itr).second;
 }
 
@@ -209,6 +211,7 @@ void Hospital::enter(int clock)
         //bring in patient with highest illness priority and set their arrival time to now
         Patients * currentPatient = allPatients.top();
         currentPatient->setArrivalTime(clock);
+        currentPatient->setVisits(currentPatient->getAllIllnesses().size()); //set number of visits to how many illnesses they've had
         
         //look to see if any Nurses or Doctors are available if their illness priority is beneath or equal to 10
         if (currentPatient->getIllnesses() <= 10)
@@ -224,7 +227,6 @@ void Hospital::enter(int clock)
                     if (thisPatient!= NULL && clock - thisPatient->getArrivalTime() > thisPatient->getServiceTime())
                     {
                         thisPatient->setTotalWaitTime(clock - thisPatient->getArrivalTime()); //update total time
-                        thisPatient->setVisits(thisPatient->getAllIllnesses().size()); //set number of visits to how many illnesses they've had
                         allNurses[i].pop();
                     }
                     //check all the Doctor queues (since people with these illness priorities can also be treated by Doctors if the Nurses are not available)
@@ -238,7 +240,6 @@ void Hospital::enter(int clock)
                             if (thisPatient!= NULL && clock - thisPatient->getArrivalTime() > thisPatient->getServiceTime())
                             {
                                 thisPatient->setTotalWaitTime(clock - thisPatient->getArrivalTime());
-                                 thisPatient->setVisits(thisPatient->getAllIllnesses().size()); //set number of visits to how many illnesses they've had
                                 allDoctors[y].pop();
                             }
                         }
@@ -276,7 +277,6 @@ void Hospital::enter(int clock)
                     if (thisPatient!= NULL && clock - thisPatient->getArrivalTime() > thisPatient->getServiceTime())
                     {
                         thisPatient->setTotalWaitTime(clock - thisPatient->getArrivalTime());
-                         thisPatient->setVisits(thisPatient->getAllIllnesses().size()); //set number of visits to how many illnesses they've had
                         allDoctors[i].pop();
                     }
                 }
@@ -304,7 +304,6 @@ void Hospital::enter(int clock)
                 if (thisPatient!= NULL && clock - thisPatient->getArrivalTime() > thisPatient->getServiceTime())
                 {
                     thisPatient->setTotalWaitTime(clock - thisPatient->getArrivalTime());
-                     thisPatient->setVisits(thisPatient->getAllIllnesses().size()); //set number of visits to how many illnesses they've had
                     allNurses[i].pop();
                 }
             }
@@ -316,7 +315,6 @@ void Hospital::enter(int clock)
                 if (thisPatient!= NULL && clock - thisPatient->getArrivalTime() > thisPatient->getServiceTime())
                 {
                     thisPatient->setTotalWaitTime(clock - thisPatient->getArrivalTime());
-                    thisPatient->setVisits(thisPatient->getAllIllnesses().size()); //set number of visits to how many illnesses they've had
                     allDoctors[i].pop();
                 }
             }
@@ -337,47 +335,55 @@ int Hospital::displayMenu()
     std::cin >> answer;
         
         int validAnswer = 1;
+        
+        while (validAnswer != 0)
+        {
     
-    while (validAnswer != 0)
-    {
-		string searchterm; 
-
 		switch (answer)
         {
             case 1:
+            {
                 std::cout << "Names of all treated patients: " << std::endl;
                 for (int i = 0; i < PatientDirectory.size(); i++)
                 {
+                    if (!PatientDirectory[DirectoryFirst[i]]->getAllIllnesses().empty())
+                    {
                     std::cout << PatientDirectory[DirectoryFirst[i]]->getFName() << " " << PatientDirectory[DirectoryFirst[i]]->getLName() << std::endl;
+                    }
                 }
-				std::cout << &PatientDirectory;
-                validAnswer = 0;
-                break;
-                
-            case 2:
-                //search map by first name
-                std::string name;
-                std::cout << "Enter a first name to find that patient record: ";
-                std::cin >> name;
-                auto itr = PatientDirectory.find(name);
-                std::cout << "Name: " << (*itr).second->getFName() << " " << (*itr).second->getLName();
-                std::cout << "Illness Levels: " << (*itr).second->getAllIllnesses().top();
 
                 validAnswer = 0;
                 break;
+            }
                 
-            /*case 3:
+            case 2:
+            {
+				//search map by first name
+				std::string name;
+				std::cout << "Enter a first name to find that patient record: ";
+				std::cin >> name;
+				auto itr = PatientDirectory.find(name);
+                std::cout << "Name: " << (*itr).second->getFName() << " " << (*itr).second->getLName() << std::endl;
+                std::cout << "Recent Illness Level: " << (*itr).second->getIllnesses() << std::endl;
+                std::cout << "Number of Visits: " << (*itr).second->getVisits() << std::endl;
+				validAnswer = 0;
+				break;
+            }
+            case 3:
+            {
                 //exit program
                 validAnswer = 0;
                 continue;
                 break;
-                
+            }
             default:
+            {
                 std::cout << "Invalid option, please try again: ";
                 std::cin >> answer;
                 break;
+            }
         }
+    }
     }
     return 0;
 }
-
