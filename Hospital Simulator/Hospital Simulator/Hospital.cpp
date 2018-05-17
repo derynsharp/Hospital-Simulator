@@ -85,13 +85,10 @@ void Hospital::createPatients()
 		}
 
 		int i = 0; 
-		string line2;
 		string line;
 
-		while (getline(fin, line2)&& i< population)
 		while (getline(fin, line) && i<= population)
 		{
-			DirectoryFirst[i] = line2;
 			DirectoryFirst[i] = line;
 			i++;
 		}
@@ -108,13 +105,10 @@ void Hospital::createPatients()
 
 
 		i = 0;
-		string line;
 		string line2;
 
-		while (getline(fin, line) && i< population)
 		while (getline(fin, line2) && i<= population)
 		{
-			DirectoryLast[i] = line;
 			DirectoryLast[i] = line2;
 			i++;
 		}
@@ -227,7 +221,7 @@ void Hospital::enter(int clock)
                 {
                     //check if Patient in Nurse queue is done being treated and pop them off the queue if they are(discharged for good yay!)
                     Patients * thisPatient = allNurses[i].front();
-                    if (clock - thisPatient->getArrivalTime() > thisPatient->getServiceTime())
+                    if (thisPatient!= NULL && clock - thisPatient->getArrivalTime() > thisPatient->getServiceTime())
                     {
                         thisPatient->setTotalWaitTime(clock - thisPatient->getArrivalTime()); //update total time
                         thisPatient->setVisits(thisPatient->getAllIllnesses().size()); //set number of visits to how many illnesses they've had
@@ -241,7 +235,7 @@ void Hospital::enter(int clock)
                         {
                             //check if Patient in Doctor queue is done being treated and pop them off if so(discharged for good yay!)
                             Patients * thisPatient = allDoctors[y].front();
-                            if (clock - thisPatient->getArrivalTime() > thisPatient->getServiceTime())
+                            if (thisPatient!= NULL && clock - thisPatient->getArrivalTime() > thisPatient->getServiceTime())
                             {
                                 thisPatient->setTotalWaitTime(clock - thisPatient->getArrivalTime());
                                  thisPatient->setVisits(thisPatient->getAllIllnesses().size()); //set number of visits to how many illnesses they've had
@@ -254,6 +248,7 @@ void Hospital::enter(int clock)
                             allDoctors[y].push(currentPatient);
                             currentPatient->setServiceTime(genDoc->getTreatTime());
                             allPatients.pop();
+                            break;
                         }
                     }
                 }
@@ -263,6 +258,7 @@ void Hospital::enter(int clock)
                     allNurses[i].push(currentPatient);
                     currentPatient->setServiceTime(genNurse->getTreatTime());
                     allPatients.pop();
+                    break;
                 }
             }
         }
@@ -277,7 +273,7 @@ void Hospital::enter(int clock)
                 {
                     //check if Patient in Doctor queue is done being treated and pop them off if so (discharged for good yay!)
                     Patients * thisPatient = allDoctors[i].front();
-                    if (clock - thisPatient->getArrivalTime() > thisPatient->getServiceTime())
+                    if (thisPatient!= NULL && clock - thisPatient->getArrivalTime() > thisPatient->getServiceTime())
                     {
                         thisPatient->setTotalWaitTime(clock - thisPatient->getArrivalTime());
                          thisPatient->setVisits(thisPatient->getAllIllnesses().size()); //set number of visits to how many illnesses they've had
@@ -290,6 +286,7 @@ void Hospital::enter(int clock)
                     allDoctors[i].push(currentPatient);
                     currentPatient->setServiceTime(genDoc->getTreatTime());
                     allPatients.pop();
+                    break;
                 }
             }
         }
@@ -304,7 +301,7 @@ void Hospital::enter(int clock)
             {
                 //check if Patient in Nurse queue is done being treated and pop them off the queue if they are(discharged for good yay!)
                 Patients * thisPatient = allNurses[i].front();
-                if (clock - thisPatient->getArrivalTime() > thisPatient->getServiceTime())
+                if (thisPatient!= NULL && clock - thisPatient->getArrivalTime() > thisPatient->getServiceTime())
                 {
                     thisPatient->setTotalWaitTime(clock - thisPatient->getArrivalTime());
                      thisPatient->setVisits(thisPatient->getAllIllnesses().size()); //set number of visits to how many illnesses they've had
@@ -316,7 +313,7 @@ void Hospital::enter(int clock)
             {
                 //check if Patient in Doctor queue is done being treated and pop them off if so (discharged for good yay!)
                 Patients * thisPatient = allDoctors[i].front();
-                if (clock - thisPatient->getArrivalTime() > thisPatient->getServiceTime())
+                if (thisPatient!= NULL && clock - thisPatient->getArrivalTime() > thisPatient->getServiceTime())
                 {
                     thisPatient->setTotalWaitTime(clock - thisPatient->getArrivalTime());
                     thisPatient->setVisits(thisPatient->getAllIllnesses().size()); //set number of visits to how many illnesses they've had
@@ -343,26 +340,21 @@ int Hospital::displayMenu()
     
     while (validAnswer != 0)
     {
-        switch (answer)
 		string searchterm; 
 
 		switch (answer)
         {
             case 1:
-<<<<<<< HEAD
                 std::cout << "Names of all treated patients: " << std::endl;
                 for (int i = 0; i < PatientDirectory.size(); i++)
                 {
                     std::cout << PatientDirectory[DirectoryFirst[i]]->getFName() << " " << PatientDirectory[DirectoryFirst[i]]->getLName() << std::endl;
                 }
-=======
 				std::cout << &PatientDirectory;
->>>>>>> 5ddd39f330d2b454d5d6bc2ffa408de6f11bd4f9
                 validAnswer = 0;
                 break;
                 
             case 2:
-<<<<<<< HEAD
                 //search map by first name
                 std::string name;
                 std::cout << "Enter a first name to find that patient record: ";
@@ -370,12 +362,7 @@ int Hospital::displayMenu()
                 auto itr = PatientDirectory.find(name);
                 std::cout << "Name: " << (*itr).second->getFName() << " " << (*itr).second->getLName();
                 std::cout << "Illness Levels: " << (*itr).second->getAllIllnesses().top();
-                
-=======
-				std::cout << "Please enter the name you would like to search for. First name only, case sensitive.\n";
-				std::cin >> searchterm;
-				std::cout << &PatientDirectory.find(searchterm);
->>>>>>> 5ddd39f330d2b454d5d6bc2ffa408de6f11bd4f9
+
                 validAnswer = 0;
                 break;
                 

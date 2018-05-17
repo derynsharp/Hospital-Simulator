@@ -83,7 +83,7 @@ public:
 //organizes Patients in the priority queue according to their priority illness level; highest numbers will go on top
 /*bool operator<(const Patients * first, const Patients * other)
 {
-    if (first.getIllnesses() < other.getIllnesses())
+    if (first->getIllnesses() < other->getIllnesses())
         return true;
     else
         return false;
