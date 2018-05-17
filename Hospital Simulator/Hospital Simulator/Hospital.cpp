@@ -336,50 +336,43 @@ int Hospital::displayMenu()
     std::cout << "1) Display all patients" << std::endl;
     std::cout << "2) Search for a specific patient record" << std::endl;
     std::cout << "3) Exit" << std::endl;
-    std::cout << "Please enter 1), 2), or 3): ";
+    std::cout << "Please enter 1, 2, or 3: ";
     std::cin >> answer;
         
         int validAnswer = 1;
     
     while (validAnswer != 0)
-    {
-        switch (answer)
-		string searchterm; 
+	{ 
+		
 
 		switch (answer)
         {
             case 1:
-<<<<<<< HEAD
                 std::cout << "Names of all treated patients: " << std::endl;
                 for (int i = 0; i < PatientDirectory.size(); i++)
                 {
                     std::cout << PatientDirectory[DirectoryFirst[i]]->getFName() << " " << PatientDirectory[DirectoryFirst[i]]->getLName() << std::endl;
                 }
-=======
-				std::cout << &PatientDirectory;
->>>>>>> 5ddd39f330d2b454d5d6bc2ffa408de6f11bd4f9
+
                 validAnswer = 0;
                 break;
                 
             case 2:
-<<<<<<< HEAD
-                //search map by first name
-                std::string name;
-                std::cout << "Enter a first name to find that patient record: ";
-                std::cin >> name;
-                auto itr = PatientDirectory.find(name);
-                std::cout << "Name: " << (*itr).second->getFName() << " " << (*itr).second->getLName();
-                std::cout << "Illness Levels: " << (*itr).second->getAllIllnesses().top();
+			{
+				//search map by first name
+				std::string name;
+				std::cout << "Enter a first name to find that patient record: ";
+				std::cin >> name;
+				auto itr = PatientDirectory.find(name);
+				std::cout << "Name: " << (*itr).second->getFName() << " " << (*itr).second->getLName();
+				std::cout << "Illness Levels: " << (*itr).second->getAllIllnesses().top();
+
+
+				validAnswer = 0;
+				break;
+			}
                 
-=======
-				std::cout << "Please enter the name you would like to search for. First name only, case sensitive.\n";
-				std::cin >> searchterm;
-				std::cout << &PatientDirectory.find(searchterm);
->>>>>>> 5ddd39f330d2b454d5d6bc2ffa408de6f11bd4f9
-                validAnswer = 0;
-                break;
-                
-            /*case 3:
+            case 3:
                 //exit program
                 validAnswer = 0;
                 continue;
@@ -389,8 +382,6 @@ int Hospital::displayMenu()
                 std::cout << "Invalid option, please try again: ";
                 std::cin >> answer;
                 break;
-             */
-        }
         }
     }
     return 0;
