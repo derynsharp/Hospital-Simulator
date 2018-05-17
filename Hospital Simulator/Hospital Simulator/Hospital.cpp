@@ -9,14 +9,14 @@
 
 void Hospital::enterData()
 {
-	int inputNum;
+	double inputNum;
 	std::cout << "Welcome to 273Ville Hospital.How many patients are arriving per hour ? Enter an integer from 1 - 60. \n";
 	do
 	{
 		std::cin >> inputNum;
 		if (inputNum >= 1 && inputNum <= 60)
 		{
-			arrivalRate = inputNum / 60;
+			arrivalRate = inputNum / 60.0;
 		}
 		else if (inputNum <= 0 || inputNum >= 61)
 		{
@@ -157,12 +157,12 @@ void Hospital::setPatients()
         }
 }
 
-void Hospital::runSim()
+void Hospital::runSim(std::priority_queue<Patients *> allPatientstest)
 {
     for (clock = 0; clock < totalTime; clock++)
     {
-        setPatients();
-        enter(clock);
+        //setPatients();
+        enter(clock, allPatientstest);
     }
 }
 
@@ -185,7 +185,7 @@ void Hospital::setUpNurses(int numNurses)
         3. Checks to see if there are any nurses or doctors that are available to treat the current patient and, if so, puts them with that doctor or nurse to be treated
         4. Checks whether doctors and nurses have finished treating their patients according to their arrival time and how long it took the caregiver to treat them, and if so, discharges the patients (no longer part of any queues)
  */
-void Hospital::enter(int clock)
+void Hospital::enter(int clock,std::priority_queue<Patients *> allPatientstest)
 {
     Doctors * genDoc = new Doctors; //generic doctor object
     Nurses * genNurse = new Nurses; //generic nurse object
@@ -195,17 +195,17 @@ void Hospital::enter(int clock)
     setUpNurses(numOfNurses);
     
     
-    if (!allPatients.empty())
+    if (!allPatientstest.empty())
     {
         //bring in patient with highest illness priority and set their arrival time to now
-        Patients * currentPatient = allPatients.top();
+        Patients * currentPatient = allPatientstest.top();
         currentPatient->setArrivalTime(clock);
         
         //look to see if any Nurses or Doctors are available if their illness priority is beneath or equal to 10
-        if (currentPatient->getIllnesses().top() <= 10)
+        if (currentPatient->getIllnesses() <= 10)
         {
             //check all the Nurse queues
-            for (unsigned int i = 0; i < allNurses.size(); i++)
+            for (int i = 0; i < allNurses.size(); i++)
             {
                 //in the case that the Nurse queue is full
                 if (!allNurses[i].empty())
@@ -215,11 +215,11 @@ void Hospital::enter(int clock)
                     if (clock - thisPatient->getArrivalTime() > thisPatient->getServiceTime())
                     {
                         thisPatient->setTotalWaitTime(clock - thisPatient->getArrivalTime()); //update total time
-                        thisPatient->setVisits(thisPatient->getIllnesses().size()); //set number of visits to how many illnesses they've had
+                        thisPatient->setVisits(thisPatient->getAllIllnesses().size()); //set number of visits to how many illnesses they've had
                         allNurses[i].pop();
                     }
                     //check all the Doctor queues (since people with these illness priorities can also be treated by Doctors if the Nurses are not available)
-                    for (unsigned int y = 0; y < allDoctors.size(); y++)
+                    for (int y = 0; y < allDoctors.size(); y++)
                     {
                         //in the case that the Doctor queue is full
                         if (!allDoctors.empty())
@@ -229,7 +229,7 @@ void Hospital::enter(int clock)
                             if (clock - thisPatient->getArrivalTime() > thisPatient->getServiceTime())
                             {
                                 thisPatient->setTotalWaitTime(clock - thisPatient->getArrivalTime());
-                                 thisPatient->setVisits(thisPatient->getIllnesses().size()); //set number of visits to how many illnesses they've had
+                                 thisPatient->setVisits(thisPatient->getAllIllnesses().size()); //set number of visits to how many illnesses they've had
                                 allDoctors[y].pop();
                             }
                         }
@@ -238,7 +238,7 @@ void Hospital::enter(int clock)
                         {
                             allDoctors[y].push(currentPatient);
                             currentPatient->setServiceTime(genDoc->getTreatTime());
-                            allPatients.pop();
+                            allPatientstest.pop();
                         }
                     }
                 }
@@ -247,7 +247,7 @@ void Hospital::enter(int clock)
                 {
                     allNurses[i].push(currentPatient);
                     currentPatient->setServiceTime(genNurse->getTreatTime());
-                    allPatients.pop();
+                    allPatientstest.pop();
                 }
             }
         }
@@ -255,7 +255,7 @@ void Hospital::enter(int clock)
         else
         {
             //check all Doctor queues
-            for (unsigned int i = 0; i < allDoctors.size(); i++)
+            for (int i = 0; i < allDoctors.size(); i++)
             {
                 //in the case that the Doctor queue is full
                 if (!allDoctors[i].empty())
@@ -265,7 +265,7 @@ void Hospital::enter(int clock)
                     if (clock - thisPatient->getArrivalTime() > thisPatient->getServiceTime())
                     {
                         thisPatient->setTotalWaitTime(clock - thisPatient->getArrivalTime());
-                         thisPatient->setVisits(thisPatient->getIllnesses().size()); //set number of visits to how many illnesses they've had
+                         thisPatient->setVisits(thisPatient->getAllIllnesses().size()); //set number of visits to how many illnesses they've had
                         allDoctors[i].pop();
                     }
                 }
@@ -274,7 +274,7 @@ void Hospital::enter(int clock)
                 {
                     allDoctors[i].push(currentPatient);
                     currentPatient->setServiceTime(genDoc->getTreatTime());
-                    allPatients.pop();
+                    allPatientstest.pop();
                 }
             }
         }
@@ -282,7 +282,7 @@ void Hospital::enter(int clock)
     else
     {
         //check all the Nurse and Doctor queues
-        for (unsigned int i = 0; i < allNurses.size(); i++)
+        for (int i = 0; i < allNurses.size(); i++)
         {
             //in the case that the Nurse queue is full
             if (!allNurses[i].empty())
@@ -292,7 +292,7 @@ void Hospital::enter(int clock)
                 if (clock - thisPatient->getArrivalTime() > thisPatient->getServiceTime())
                 {
                     thisPatient->setTotalWaitTime(clock - thisPatient->getArrivalTime());
-                     thisPatient->setVisits(thisPatient->getIllnesses().size()); //set number of visits to how many illnesses they've had
+                     thisPatient->setVisits(thisPatient->getAllIllnesses().size()); //set number of visits to how many illnesses they've had
                     allNurses[i].pop();
                 }
             }
@@ -304,7 +304,7 @@ void Hospital::enter(int clock)
                 if (clock - thisPatient->getArrivalTime() > thisPatient->getServiceTime())
                 {
                     thisPatient->setTotalWaitTime(clock - thisPatient->getArrivalTime());
-                    thisPatient->setVisits(thisPatient->getIllnesses().size()); //set number of visits to how many illnesses they've had
+                    thisPatient->setVisits(thisPatient->getAllIllnesses().size()); //set number of visits to how many illnesses they've had
                     allDoctors[i].pop();
                 }
             }
@@ -331,7 +331,11 @@ int Hospital::displayMenu()
         switch (answer)
         {
             case 1:
-                //display map here
+                std::cout << "Names of all treated patients: " << std::endl;
+                for (int i = 0; i < PatientDirectory.size(); i++)
+                {
+                    std::cout << PatientDirectory[DirectoryFirst[i]]->getFName() << " " << PatientDirectory[DirectoryFirst[i]]->getLName() << std::endl;
+                }
                 validAnswer = 0;
                 break;
                 

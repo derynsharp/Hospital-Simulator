@@ -34,7 +34,6 @@ using std::string;
     Functions:
         mutator and accessor functions
         bool operator function -- used to set patients in priority queue based of their most recent illness priority number
-        createPatients function -- streams in names from text files and pushes them onto the a map of all patients, assigning a random illness priority, and then pushing admitted patients onto the ER priority queue
  */
 class Patients
 {
@@ -62,7 +61,8 @@ public:
     string getLName() {return lname;}
     void setLName(string lastN) {lname = lastN;}
     
-    std::stack<int> getIllnesses() {return illnessP;}
+    int getIllnesses() {return illnessP.top();}
+    std::stack<int> getAllIllnesses() {return illnessP;}
     void setIllnesses(int ill) {illnessP.push(ill);}
     
     int getArrivalTime() {return arrivalTime;}
@@ -82,7 +82,7 @@ public:
     //organizes Patients in the priority queue according to their priority illness level; highest numbers will go on top
 	bool operator<(const Patients * &other) const
 	{
-		if (illnessP < other->illnessP)
+		if (this->illnessP.top() < other->illnessP.top())
 			return true;
 		else
 			return false;

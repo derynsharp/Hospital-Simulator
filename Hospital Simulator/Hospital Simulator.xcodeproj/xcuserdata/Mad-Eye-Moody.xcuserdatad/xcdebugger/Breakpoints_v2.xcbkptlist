@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Hospital Simulator/Hospital.hpp"
-            timestampString = "548021673.0517859"
+            timestampString = "548278326.509531"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "27"
-            endingLineNumber = "27"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
             landmarkName = "class Hospital"
             landmarkType = "3">
          </BreakpointContent>
@@ -42,12 +42,184 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Hospital Simulator/Hospital.cpp"
-            timestampString = "548206072.948541"
+            timestampString = "548207474.585771"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "123"
-            endingLineNumber = "123"
+            startingLineNumber = "122"
+            endingLineNumber = "122"
             landmarkName = "Hospital::getPatient()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Hospital Simulator/Hospital.cpp"
+            timestampString = "548273766.036564"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "291"
+            endingLineNumber = "291"
+            landmarkName = "Hospital::enter(int clock,std::priority_queue&lt;Patients *&gt; allPatientstest)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Hospital Simulator/Hospital.cpp"
+            timestampString = "548273813.3798259"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "313"
+            endingLineNumber = "313"
+            landmarkName = "Hospital::enter(int clock,std::priority_queue&lt;Patients *&gt; allPatientstest)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Hospital::enter(int)"
+                  moduleName = "Hospital Simulator"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Mad-Eye-Moody/Documents/Data%20Structures/Hospital-Simulator/Hospital%20Simulator/Hospital%20Simulator/Hospital.cpp"
+                  timestampString = "548273839.332931"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "313"
+                  endingLineNumber = "313"
+                  offsetFromSymbolStart = "1282">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Hospital::enter(int)"
+                  moduleName = "Hospital Simulator"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Mad-Eye-Moody/Documents/Data%20Structures/Hospital-Simulator/Hospital%20Simulator/Hospital%20Simulator/Hospital.cpp"
+                  timestampString = "548273839.33618"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "313"
+                  endingLineNumber = "313"
+                  offsetFromSymbolStart = "1353">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Hospital::enter(int)"
+                  moduleName = "Hospital Simulator"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Mad-Eye-Moody/Documents/Data%20Structures/Hospital-Simulator/Hospital%20Simulator/Hospital%20Simulator/Hospital.cpp"
+                  timestampString = "548273839.3383451"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "313"
+                  endingLineNumber = "313"
+                  offsetFromSymbolStart = "2022">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Hospital::enter(int)"
+                  moduleName = "Hospital Simulator"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Mad-Eye-Moody/Documents/Data%20Structures/Hospital-Simulator/Hospital%20Simulator/Hospital%20Simulator/Hospital.cpp"
+                  timestampString = "548273839.340332"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "313"
+                  endingLineNumber = "313"
+                  offsetFromSymbolStart = "5343">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Hospital::enter(int)"
+                  moduleName = "Hospital Simulator"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Mad-Eye-Moody/Documents/Data%20Structures/Hospital-Simulator/Hospital%20Simulator/Hospital%20Simulator/Hospital.cpp"
+                  timestampString = "548273839.3423001"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "313"
+                  endingLineNumber = "313"
+                  offsetFromSymbolStart = "7377">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Hospital::enter(int)"
+                  moduleName = "Hospital Simulator"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Mad-Eye-Moody/Documents/Data%20Structures/Hospital-Simulator/Hospital%20Simulator/Hospital%20Simulator/Hospital.cpp"
+                  timestampString = "548273839.344331"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "313"
+                  endingLineNumber = "313"
+                  offsetFromSymbolStart = "8057">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Hospital Simulator/main.cpp"
+            timestampString = "548274736.273036"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "main()"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Hospital Simulator/Hospital.cpp"
+            timestampString = "548275713.909606"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "281"
+            endingLineNumber = "281"
+            landmarkName = "Hospital::enter(int clock,std::priority_queue&lt;Patients *&gt; allPatientstest)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Hospital Simulator/Hospital.cpp"
+            timestampString = "548277332.462068"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "205"
+            endingLineNumber = "205"
+            landmarkName = "Hospital::enter(int clock,std::priority_queue&lt;Patients *&gt; allPatientstest)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

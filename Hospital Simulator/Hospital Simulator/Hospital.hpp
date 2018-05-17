@@ -16,11 +16,14 @@
 
 /*Hospital Class:
  
-    Holds a lot of important stuff:
+    Variables:
         1. The priority queue for all patients, based off their illness priority number
         2. The vector of queues for the doctors and nurses the patients can get treated by
         3. Clock and the total time the simulation will run for
         4. The arrival rate of patients/min
+ 
+    Functions:
+        1.  createPatients function -- streams in names from text files and pushes them onto the a map of all patients, assigning a random illness priority, and then pushing admitted patients onto the ER priority queue
  */
 
 class Hospital
@@ -28,7 +31,7 @@ class Hospital
 private:
     int clock;
     const int totalTime = 10080; //number of minutes in a week
-	int arrivalRate;
+	double arrivalRate;
     int numOfDoctors;
     int numOfNurses;
 
@@ -44,18 +47,18 @@ private:
     
 public:
     Hospital() {}
-    Hospital(int clock, int arrivalRate, int numOfDoctors, int numOfNurses) {this->clock = clock; this->arrivalRate = arrivalRate; this->numOfDoctors = numOfDoctors; this->numOfNurses = numOfNurses;}
+    Hospital(int clock, double arrivalRate, int numOfDoctors, int numOfNurses) {this->clock = clock; this->arrivalRate = arrivalRate; this->numOfDoctors = numOfDoctors; this->numOfNurses = numOfNurses;}
     void enterData();
 	void createPatients();
 	Patients * getPatient();
     void setPatients();
-    void runSim();
+    void runSim(std::priority_queue<Patients *> allPatientstest);
     int displayMenu();
     
     void setUpDocs(int numDocs);
     void setUpNurses(int numNurses);
     
-    void enter(int clock);
+    void enter(int clock,std::priority_queue<Patients *> allPatientstest);
 };
 
 #endif /* Hospital_hpp */
