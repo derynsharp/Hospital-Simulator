@@ -7,6 +7,13 @@
 //
 
 #include <iostream>
+#include <stdio.h>
+#include <string>
+#include <stack>
+#include <queue>
+#include <vector>
+#include <fstream>
+#include <map>
 #include "Caregivers.hpp"
 #include "Patients.hpp"
 #include "Hospital.hpp"

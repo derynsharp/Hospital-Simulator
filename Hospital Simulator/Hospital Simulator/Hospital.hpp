@@ -12,6 +12,11 @@
 #include <iostream>
 #include <queue>
 #include <vector>
+#include <stdio.h>
+#include <string>
+#include <stack>
+#include <fstream>
+#include <map>
 #include "Patients.hpp"
 
 /*Hospital Class:

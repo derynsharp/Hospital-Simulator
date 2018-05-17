@@ -10,6 +10,13 @@
 #define Caregivers_hpp
 
 #include <stdio.h>
+#include <iostream>
+#include <string>
+#include <stack>
+#include <queue>
+#include <vector>
+#include <fstream>
+#include <map>
 #include "Random.h"
 
 //parent class for Doctors and Nurses
