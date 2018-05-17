@@ -6,6 +6,14 @@
 //  Copyright © 2018 Madison Oliver. All rights reserved.
 //
 
+#include <stdio.h>
+#include <iostream>
+#include <string>
+#include <stack>
+#include <queue>
+#include <vector>
+#include <fstream>
+#include <map>
 #include "Caregivers.hpp"
 #include "Random.h"
 

@@ -355,18 +355,20 @@ int Hospital::displayMenu()
                 break;
                 
             case 2:
-                //search map by first name
-                std::string name;
-                std::cout << "Enter a first name to find that patient record: ";
-                std::cin >> name;
-                auto itr = PatientDirectory.find(name);
-                std::cout << "Name: " << (*itr).second->getFName() << " " << (*itr).second->getLName();
-                std::cout << "Illness Levels: " << (*itr).second->getAllIllnesses().top();
+			{
+				//search map by first name
+				std::string name;
+				std::cout << "Enter a first name to find that patient record: ";
+				std::cin >> name;
+				auto itr = PatientDirectory.find(name);
+				std::cout << "Name: " << (*itr).second->getFName() << " " << (*itr).second->getLName();
+				std::cout << "Illness Levels: " << (*itr).second->getAllIllnesses().top();
 
-                validAnswer = 0;
-                break;
+				validAnswer = 0;
+				break;
+			}
                 
-            /*case 3:
+            case 3:
                 //exit program
                 validAnswer = 0;
                 continue;

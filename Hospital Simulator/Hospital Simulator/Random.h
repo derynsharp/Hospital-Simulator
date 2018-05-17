@@ -7,6 +7,14 @@
 
 #include <cstdlib>
 #include <ctime>
+#include <stdio.h>
+#include <iostream>
+#include <string>
+#include <stack>
+#include <queue>
+#include <vector>
+#include <fstream>
+#include <map>
 
 //used to randomize the amount of time it takes for Doctors and Nurses to treat a patient
 class Random {
